@@ -1,1 +1,1 @@
-# Module Notifier — Envoi de notifications automatiques au client
+# Notifier — Relances et questions ciblées au client

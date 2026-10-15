@@ -109,14 +109,29 @@ Message automatique au client
 
 ```
 leyton-doc-platform/
-├── frontend/           # Interface React (dropzone, dashboard, notifications)
-├── backend/            # API FastAPI + moteur IA
-│   ├── ocr/            # Extraction de contenu (OCR / parsing PDF)
-│   ├── classifier/     # Classification des documents par type
-│   ├── validator/      # Validation conformité CIR/CII
-│   └── notifier/       # Notifications automatiques client
-├── docs/               # Documentation, cahier des charges, maquettes
-└── tests/              # Tests unitaires et d'intégration
+├── frontend/
+│   ├── client/                # Dropzone, statut de complétude, messages
+│   ├── consultant/            # File des doutes, décision, historique
+│   └── admin/                 # Produits, documents attendus (bonus)
+├── backend/
+│   ├── api/                   # Routes FastAPI
+│   ├── db/                    # Modèles et migrations (SQLite)
+│   ├── pipeline/
+│   │   ├── reader/            # PDF natif + OCR → texte
+│   │   ├── classifier/        # Type de document + probabilité
+│   │   ├── extractor/         # Champs par type (regex d'abord, LLM en appoint)
+│   │   ├── rules/             # Règles déterministes + règles croisées
+│   │   └── decision/          # Score, seuils, choix des 3 boîtes
+│   ├── workflow/              # Statuts du dossier, pièces manquantes
+│   ├── notifier/              # Relances et questions ciblées au client
+│   ├── audit/                 # Journal des décisions (traçabilité)
+│   └── config/                # Produits (CIR, CII) : documents attendus, règles
+├── data/
+│   ├── generator/             # Génération de documents synthétiques + anomalies
+│   └── samples/               # Jeu de test + vérité terrain
+├── eval/                      # Métriques : validations à tort, taux de doute, classification
+├── docs/                      # Logique de validation, architecture, démo
+└── tests/                     # Tests unitaires et d'intégration
 ```
 
 ---

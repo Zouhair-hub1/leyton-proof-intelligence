@@ -1,0 +1,7 @@
+# Eval — Métriques de performance
+
+Métriques suivies :
+- Taux de classification correcte
+- Taux de validations à tort (faux positifs)
+- Taux de doute (cas envoyés au consultant)
+- Taux de détection des pièces manquantes

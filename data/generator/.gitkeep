@@ -1,0 +1,4 @@
+# Generator — Génération de documents synthétiques + anomalies
+
+Ce module génère des documents de test anonymisés pour simuler
+les dépôts clients sans utiliser de vraies données confidentielles.
