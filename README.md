@@ -1,146 +1,123 @@
-# 🏢 Leyton — Plateforme Intelligente de Collecte Documentaire
+# 🏢 Leyton Proof Intelligence
 
+> Plateforme IA de collecte et validation documentaire pour dossiers CIR/CII
 > Projet Innovation — Groupe B002 | Bootcamp 2026
 
 ---
 
-## 📌 Contexte & Problématique
+## 📌 Problématique
 
-Leyton est un cabinet de conseil spécialisé dans l'optimisation fiscale des entreprises,
-notamment via le **Crédit d'Impôt Recherche (CIR)** et le **Crédit d'Impôt Innovation (CII)**.
+> *"Comment concevoir une plateforme intelligente qui automatise la collecte et l'analyse des documents CIR/CII, réduit délais et coûts, détecte tôt les incohérences et guide le client vers des dossiers complets, cohérents et défendables ?"*
 
-Pour constituer ces dossiers, Leyton doit collecter de nombreux documents justificatifs
-auprès de ses clients (factures, fiches de paie, contrats, CR de R&D, etc.).
+Leyton collecte aujourd'hui des dizaines de documents clients par **emails manuels et relances**. Le vrai problème n'est pas juste la collecte — c'est que **plus de 80% des redressements fiscaux CIR proviennent d'incohérences entre documents**, non détectées avant soumission à l'administration.
 
-**Le problème aujourd'hui :**
-- Collecte entièrement manuelle par emails et relances
-- Aucune visibilité en temps réel sur les pièces manquantes ou incorrectes
-- Perte de temps considérable pour les consultants Leyton
-- Risque d'erreurs et de retards dans le traitement des dossiers
+### Les 3 problèmes identifiés
+
+| Problème | Impact |
+|---|---|
+| ⏱️ **Temps de traitement** | Les consultants font des tâches répétitives au lieu d'analyser |
+| 💶 **Coût opérationnel** | Plus un dossier prend d'heures, moins de dossiers sont traités |
+| ⚖️ **Complétude ≠ Cohérence** | Un dossier complet peut contenir des contradictions invisibles |
 
 ---
 
-## 🎯 Objectif
+## 🎯 Notre Solution — 7 Axes Complémentaires
 
-Construire une **plateforme intelligente** où :
+### Phase 1 · Collecte Continue
 
-1. Le client dépose ses documents via une **dropzone**
-2. L'IA **classe automatiquement** chaque document selon son type (fiche de paie, facture, contrat...)
-3. Le système **valide la conformité** de chaque pièce selon les règles CIR/CII
-4. Les **pièces manquantes sont détectées** automatiquement
-5. Le client reçoit une **notification automatique** listant ce qu'il doit fournir ou corriger
+**Axe 1 · Collecte Intelligente**
+Dropzone unique, checklist CIR/CII, statut en temps réel par document :
+`validé` · `manquant` · `à corriger` · `en cours d'analyse`
 
----
+**Axe 2 · Suivi Continu par Notifications** *(Innovation)*
+- Pièces périodiques : une relance automatique chaque mois
+- Pièces non périodiques : dépôt libre jusqu'à la date limite
+- Messages ciblés : *"Ta fiche de paie de mars n'a pas été déposée"*
 
-## 📂 Documents CIR & CII — Ce que l'IA doit reconnaître
+### Phase 2 · Analyse Complète
 
-### Dossier CIR (Crédit d'Impôt Recherche)
+**Axe 3 · Lecture, Contrôle et Structuration**
+OCR + parsing PDF → extraction des entités (dates, montants, noms, heures) → contrôle d'intégrité et de cohérence interne
 
-**Partie Administrative & Financière :**
-| Type de document | Description |
-|---|---|
-| Fiches de paie | Justificatif des dépenses de personnel R&D |
-| Feuilles de temps | Suivi des heures passées sur projets R&D |
-| Factures fournisseurs | Dépenses sous-traitance, veille technologique |
-| Factures brevets | Dépôt, maintenance, défense de brevets |
-| Déclaration fiscale 2069-A | Formulaire officiel de déclaration CIR |
-| Conventions / Extraits de compte | Preuves d'avances ou subventions remboursables |
-| Avis d'agrément CIR | Si l'entreprise est sous-traitante agréée |
-| Justificatifs amortissements | État des dotations avec factures associées |
+**Axe 4 · Le Jumeau Temporel** *(Innovation)*
+Chronologie reconstruite automatiquement à partir de tous les documents.
+Détecte : facture avant contrat, heures hors période, agrément expiré.
 
-**Partie Technique :**
-| Type de document | Description |
-|---|---|
-| Description du projet R&D | Objectifs, méthodologie, avancées |
-| État de l'art | Analyse des technologies existantes |
-| Description des verrous technologiques | Freins techniques et solutions apportées |
-| Rapport des travaux réalisés | Résumé des tests, hypothèses, conclusions |
-| Comptes-rendus de réunion R&D | CR internes d'avancement des projets |
+**Axe 5 · Le Graphe de Cohérence Cross-Documents** *(Innovation principale)*
+L'IA relie tous les documents entre eux et détecte les contradictions invisibles document par document :
+- Contrôle financier : montants et heures vs justificatifs
+- Contrôle de personnel : personnes déclarées vs pièces de participation
+- Contrôle de traçabilité : rapports, réunions et périodes
+- Contrôle de sous-traitance : agréments, contrats, factures
 
-### Dossier CII (Crédit d'Impôt Innovation — réservé PME)
+**Axe 6 · Pré-audit IA et Résolution Proactive** *(Innovation)*
+L'IA joue le rôle de l'inspecteur fiscal : 5 questions contradictoires par dépense → rapport de risque explicable → boucle de résolution ciblée.
 
-| Type de document | Description |
-|---|---|
-| Fiches de paie | Personnel technique affecté au projet d'innovation |
-| Factures prototypage / tests | Frais de développement du nouveau produit |
-| Factures sous-traitants agréés CII | Prestataires agréés uniquement |
-| Description technique du projet | En quoi l'innovation se distingue du marché |
-| Analyse de l'état de l'art | Preuve que le produit apporte une nouveauté |
-| Récapitulatif des dépenses | Tableau consolidé des dépenses éligibles |
-| Déclaration fiscale 2069-A | Même formulaire que CIR |
+**Axe 7 · Tableau de Bord et Pilotage**
+Vue client (pièces dues, statuts) + Vue consultant (alertes prioritaires, chronologie interactive, graphe de relations).
 
 ---
 
-## 🔄 Flux de traitement
+## 📂 Documents CIR & CII reconnus
 
-```
-Client dépose ses docs (dropzone)
-        │
-        ▼
-Reconnaissance & contrôle qualité
-(lisibilité, nomenclature, format)
-        │
-        ▼
-Extraction du contenu (OCR)
-        │
-        ▼
-Classification par type de document
-(fiche de paie / facture / CR / contrat...)
-        │
-        ▼
-Validation conformité
-(checklist CIR ou CII + inférence IA)
-        │
-        ├── ✅ Document valide → statut "Validé"
-        ├── ⚠️  Cas douteux → signalement humain
-        └── ❌ Non conforme → statut "Rejeté"
-        │
-        ▼
-Détection pièces manquantes
-        │
-        ▼
-Message automatique au client
-"Il manque : fiche de paie janvier, CR réunion R&D..."
-```
+### Dossier CIR
+| Type | Description |
+|---|---|
+| Fiches de paie | Personnel R&D |
+| Feuilles de temps | Heures sur projets R&D |
+| Factures fournisseurs | Sous-traitance, veille |
+| Factures brevets | Dépôt, maintenance |
+| Déclaration 2069-A | Formulaire fiscal officiel |
+| Conventions / Extraits | Avances, subventions |
+| Avis agrément CIR | Si sous-traitant agréé |
+| Justificatifs amortissements | Dotations + factures |
+| Description projet R&D | Objectifs, méthodologie |
+| État de l'art | Technologies existantes |
+| Verrous technologiques | Freins + solutions |
+| Rapport des travaux | Tests, hypothèses, conclusions |
+| CR réunions R&D | Comptes-rendus internes |
+
+### Dossier CII
+| Type | Description |
+|---|---|
+| Fiches de paie | Personnel technique |
+| Factures prototypage | Développement produit |
+| Factures sous-traitants agréés | Prestataires agréés CII uniquement |
+| Description technique | Innovation vs marché |
+| Analyse état de l'art | Preuve de nouveauté |
+| Récapitulatif dépenses | Tableau consolidé |
+| Déclaration 2069-A | Formulaire fiscal officiel |
 
 ---
 
 ## 🗂️ Structure du Projet
 
 ```
-leyton-doc-platform/
+leyton-proof-intelligence/
 ├── frontend/
-│   ├── client/                # Dropzone, statut de complétude, messages
-│   ├── consultant/            # File des doutes, décision, historique
-│   └── admin/                 # Produits, documents attendus (bonus)
+│   ├── client/                    # Dropzone, statut, notifications
+│   ├── consultant/                # Alertes, chronologie, graphe
+│   └── admin/                     # Config produits (bonus)
 ├── backend/
-│   ├── api/                   # Routes FastAPI
-│   ├── db/                    # Modèles et migrations (SQLite)
+│   ├── api/                       # Routes FastAPI
+│   ├── db/                        # Modèles SQLite + migrations
 │   ├── pipeline/
-│   │   ├── reader/            # PDF natif + OCR → texte
-│   │   ├── classifier/        # Type de document + probabilité
-│   │   ├── extractor/         # Champs par type (regex d'abord, LLM en appoint)
-│   │   ├── rules/             # Règles déterministes + règles croisées
-│   │   └── decision/          # Score, seuils, choix des 3 boîtes
-│   ├── workflow/              # Statuts du dossier, pièces manquantes
-│   ├── notifier/              # Relances et questions ciblées au client
-│   ├── audit/                 # Journal des décisions (traçabilité)
-│   └── config/                # Produits (CIR, CII) : documents attendus, règles
+│   │   ├── reader/                # OCR + parsing PDF
+│   │   ├── classifier/            # Type de document + score
+│   │   ├── extractor/             # Entités : dates, montants, noms
+│   │   ├── rules/                 # Règles métier + croisées
+│   │   └── decision/              # Score risque + décision + explication
+│   ├── workflow/                  # Statuts, manquants, chronologie
+│   ├── notifier/                  # Notifications automatiques
+│   ├── audit/                     # Journal IA + graphe + pré-audit
+│   └── config/                    # Produits CIR/CII : docs attendus
 ├── data/
-│   ├── generator/             # Génération de documents synthétiques + anomalies
-│   └── samples/               # Jeu de test + vérité terrain
-├── eval/                      # Métriques : validations à tort, taux de doute, classification
-├── docs/                      # Logique de validation, architecture, démo
-└── tests/                     # Tests unitaires et d'intégration
+│   ├── generator/                 # Documents synthétiques + anomalies
+│   └── samples/                   # Jeux de test
+├── eval/                          # Métriques et benchmarks
+├── docs/                          # Architecture, cahier des charges
+└── tests/                         # Tests unitaires et e2e
 ```
-
----
-
-## 👥 Équipe
-
-- **Zouhair IMAD**
-- **Hamza Bouhani**
-- *(membres à compléter)*
 
 ---
 
@@ -152,8 +129,9 @@ leyton-doc-platform/
 | Backend | FastAPI (Python) |
 | OCR / Parsing | PyMuPDF, pdfplumber, Tesseract |
 | IA / Classification | OpenAI API (GPT-4) |
+| Graphe de cohérence | NetworkX |
 | Notifications | SMTP / SendGrid |
-| Base de données | PostgreSQL |
+| Base de données | SQLite (proto) → PostgreSQL |
 
 ---
 
@@ -166,28 +144,42 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 
 # Frontend
-cd frontend
+cd frontend/client
 npm install
 npm start
 ```
 
 ---
 
-## 📅 Planning (5 jours)
+## ⚠️ Garde-fous
 
-| Jour | Phase | Livrable |
-|---|---|---|
-| J1 | Cadrage & Architecture | Cahier des charges + schéma technique |
-| J2 | Pipeline IA (OCR + Classification) | Module extraction + classification fonctionnel |
-| J3 | Validation & Détection manquants | Checklist CIR/CII + statuts documents |
-| J4 | Frontend + Notifications | Dropzone + tableau de bord + alertes |
-| J5 | Tests & Démo | Démo sur jeu de docs synthétiques |
+| Principe | Application |
+|---|---|
+| **Traçabilité** | Source et confiance visibles pour chaque décision |
+| **Pas de boîte noire** | Chaque alerte est expliquée avec le document source |
+| **Humain dans la boucle** | Le consultant valide toujours les cas douteux |
+| **Confidentialité** | Données anonymisées/synthétiques uniquement |
 
 ---
 
-## ⚠️ Points de Vigilance
+## 📅 Planning 5 jours
 
-- **Scope 5 jours** : prioriser un pipeline bout-en-bout simplifié (3-4 types de docs)
-- **Confidentialité** : utiliser uniquement des données anonymisées/synthétiques
-- **Faux positifs** : chaque décision IA doit afficher un score de confiance (pas de boîte noire)
-- **Traçabilité** : pouvoir expliquer pourquoi un document est validé ou rejeté
+| Jour | Phase | Livrable |
+|---|---|---|
+| J1 | Cadrage + Référentiel CIR/CII | Architecture + config produits |
+| J2 | Axe 1 + Axe 2 | Dropzone + notifications |
+| J3 | Axes 3+4+5+6 | Pipeline IA complet |
+| J4 | Axe 7 + intégration | Dashboard + tableau de bord |
+| J5 | Tests + Démo | Démo sur dossier synthétique |
+
+---
+
+## 👥 Équipe
+
+- Zouhair IMAD
+- Hamza Bouhani
+- *(membres à compléter)*
+
+---
+
+*"Passer d'une plateforme qui collecte à une plateforme qui comprend, relie et éprouve les preuves."*
